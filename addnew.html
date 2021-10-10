@@ -28,21 +28,18 @@
                     <a class="nav-link" href="contact.html">Contact</a>
                 </div>
             </nav>
-            <h1 class="book-title">Add a New Book</h1>
-        <div>
-        <form>
-            <div class="mb-3">
-                <input type="text" class="form-control" id="title" placeholder="Title">
-                <div class="form-text">Add a title of the book.</div>
-            </div>
-            <div class="mb-3">
-                <input type="text" class="form-control" id="author" placeholder="Author">
-                <div class="form-text">Add author of the book.</div>
-            </div>
-            <button type="submit" class="btn btn-primary">Add</button>
+            <h1 class="book-title mt-5 mb-5 text-center">Add a New Book</h1>
+            <div>
+            <form action="/action_page.php">
+                <label for="fname">Title</label>
+                <input type="text" id="fname" name="firstname" placeholder="Your book title">
+
+                <label for="lname">Author</label>
+                <input type="text" id="lname" name="lastname" placeholder="Your book author">
+            
+                <input type="submit" value="Add Book">
             </form>
             </div>
-        </div>
         <script src="style.js"></script>
         <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
 
