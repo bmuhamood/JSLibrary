@@ -8,27 +8,26 @@ function saveBook() {
   localStorage.setItem("bookTitle", title);
   localStorage.setItem("bookAuthor", author);
 
-  let user_records=new Array();
-    user_records=JSON.parse(localStorage.getItem("users"))?JSON.parse(localStorage.getItem("users")):[]
-    if(user_records.some((v)=>{return v.email==email}))
+  let book_records=new Array();
+    book_records=JSON.parse(localStorage.getItem("books"))?JSON.parse(localStorage.getItem("books")):[]
+    if(book_records.some((v)=>{return v.title==author}))
     {
       alert("duplicate data");
     }
     else
     {
-      user_records.push({
-      "name":name,
-      "email":email,
-      "psw":psw
+      book_records.push({
+      "title":title,
+      "author":author
     })
-    localStorage.setItem("users",JSON.stringify(user_records));
+    localStorage.setItem("books",JSON.stringify(book_records));
     }
     showData();
 }
 
 function showData() {
 let book_records=new Array();
-book_records=JSON.parse(localStorage.getItem("users"))?JSON.parse(localStorage.getItem("users")):[]
+book_records=JSON.parse(localStorage.getItem("books"))?JSON.parse(localStorage.getItem("books")):[]
 if(book_records.some((v)=>{return v.title==author}))
 {
   alert("duplicate data");
@@ -39,16 +38,16 @@ else
   "title":title,
   "author":author,
 })
-localStorage.setItem("users",JSON.stringify(book_records));
+localStorage.setItem("books",JSON.stringify(book_records));
 }
 showData();
 }
 
 function showData()
 {
-  document.getElementById("showUsers").innerHTML="";
+  document.getElementById("showBooks").innerHTML="";
   let book_records=new Array();
-user_records=JSON.parse(localStorage.getItem("users"))?JSON.parse(localStorage.getItem("users")):[]
+book_records=JSON.parse(localStorage.getItem("books"))?JSON.parse(localStorage.getItem("books")):[]
   if(book_records)
   {
     for(let i=0;i<book_records.length;i++)
@@ -56,7 +55,7 @@ user_records=JSON.parse(localStorage.getItem("users"))?JSON.parse(localStorage.g
       let addDiv=document.createElement('div');
   addDiv.className="row";
   addDiv.innerHTML='<div class="col-sm-4" style="padding: 10px;">'+book_records[i].title+'</div><div class="col-sm-4" style="padding: 10px;">'+book_records[i].author+'</div>';
-  document.getElementById("showUsers").appendChild(addDiv);
+  document.getElementById("showBooks").appendChild(addDiv);
 
     }
   }
