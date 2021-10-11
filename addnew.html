@@ -30,14 +30,14 @@
             </nav>
             <h1 class="book-title mt-5 mb-5 text-center">Add a New Book</h1>
             <div>
-            <form action="/action_page.php">
-                <label for="fname">Title</label>
-                <input type="text" id="fname" name="firstname" placeholder="Your book title">
+            <form action="#">
+                <label for="title">Title</label>
+                <input type="text" id="bookTitle" name="booktitle" placeholder="Your book title">
 
-                <label for="lname">Author</label>
-                <input type="text" id="lname" name="lastname" placeholder="Your book author">
+                <label for="author">Author</label>
+                <input type="text" id="bookAuthor" name="bookauthor" placeholder="Your book author">
             
-                <input type="submit" value="Add Book">
+                <input type="submit" onclick=saveBook() value="Add A Book">
             </form>
             </div>
         <script src="style.js"></script>
